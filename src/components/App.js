@@ -1,13 +1,14 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { selectSong } from '../actions';
+import SongList from './SongList/SongList';
 
 export default function App() {
     return (
         <React.Fragment>
             <CssBaseline />
-            {/* The rest of your application */}
-            <div>App</div>
+            <div>
+                <SongList />
+            </div>
         </React.Fragment>
     );
 }

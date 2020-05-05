@@ -30,7 +30,7 @@ module.exports = merge(common, {
         historyApiFallback: true,
         hot: true,
         host: '0.0.0.0',
-        port: 9009,
+        port: 9069,
         watchContentBase: true,
         allowedHosts: ['reactcrud.pm'],
     },
