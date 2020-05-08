@@ -17,6 +17,8 @@ const selectedSongReducer = (selectedSong = null, action) => {
     return selectedSong;
 };
 
+//The keys on this objects are going to be they keys on our state object
+//Basicamente este combineReducers es el que arma el "state" son las keys y los resultados de lo que devuelven los reducers que le pasas a las keys
 export default combineReducers({
     songs: songsReducer,
     selectedSong: selectedSongReducer,

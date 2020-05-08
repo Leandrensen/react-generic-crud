@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { List, ListItem, ListItemText, Divider } from '@material-ui/core/';
+import { selectSong } from '../../actions';
 import Loading from '../Globales/Loading';
 import Button from '../Globales/Button';
 import Box from '../Globales/Box';
 
 const SongList = (props) => {
+    useEffect(() => {
+        console.log('useEffect');
+    }, []);
+
     const renderContent = () => {
         return (
-            <Box justify='between' title='Song List'>
+            // <Box justify='between' title='Song List'>
+            <>
                 <List>{renderList()}</List>
-            </Box>
+            </>
+            // </Box>
         );
     };
 
@@ -22,16 +29,12 @@ const SongList = (props) => {
                 <React.Fragment key={`song-${index}`}>
                     <ListItem className='song'>
                         <ListItemText>{song.title}</ListItemText>
-                        <Button onClick={() => doSomething()}>Select</Button>
+                        <Button onClick={() => props.selectSong(song)}>Select</Button>
                     </ListItem>
                     <Divider />
                 </React.Fragment>
             );
         });
-    };
-
-    const doSomething = () => {
-        return;
     };
 
     const renderLoading = () => {
@@ -50,4 +53,4 @@ const mapStateToProps = (state) => {
     return { songs: state.songs };
 };
 
-export default connect(mapStateToProps)(SongList);
+export default connect(mapStateToProps, { selectSong: selectSong })(SongList);
