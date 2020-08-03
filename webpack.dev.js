@@ -22,9 +22,9 @@ module.exports = merge(common, {
             {
                 test: /\.(scss|css)$/,
                 use: [
-                    // Creates `style` nodes from JS strings
+                    // Takes CSS imports and adds them to the HTML document
                     'style-loader',
-                    // Translates CSS into CommonJS
+                    // Knows how to deal with CSS imports
                     'css-loader',
                     // Compiles Sass to CSS
                     'sass-loader',

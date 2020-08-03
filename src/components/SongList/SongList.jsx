@@ -4,7 +4,6 @@ import { List, ListItem, ListItemText, Divider } from '@material-ui/core/';
 import { selectSong } from '../../actions';
 import Loading from '../Globales/Loading';
 import Button from '../Globales/Button';
-import Box from '../Globales/Box';
 
 const SongList = (props) => {
     useEffect(() => {
@@ -14,9 +13,9 @@ const SongList = (props) => {
     const renderContent = () => {
         return (
             // <Box justify='between' title='Song List'>
-            <>
+            <div className='song-list'>
                 <List>{renderList()}</List>
-            </>
+            </div>
             // </Box>
         );
     };

@@ -21,15 +21,37 @@ module.exports = {
                 },
             },
             {
-                test: /\.(png|jpg|jpeg|svg)$/,
-                loader: 'url-loader',
-                options: {
-                    esModule: false,
-                },
+                test: /\.(jpe?g|png|gif|svg)$/,
+                use: [
+                    // Embeds images into bundle.js if short size, or puts it on a separate file if large size
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                            name: 'images/[name].[hash].[ext]',
+                        },
+                    },
+                    // Compresses large size images
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            pngquant: {
+                                quality: '80-90',
+                                speed: 1,
+                            },
+                        },
+                    },
+                ],
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                loader: 'url-loader?limit=100000',
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 100000,
+                        name: 'images/[name].[hash].[ext]',
+                    },
+                },
             },
             {
                 test: /\.(html)$/,

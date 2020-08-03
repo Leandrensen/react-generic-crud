@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { selectSong } from '../../actions';
 import Loading from '../Globales/Loading';
-import Box from '../Globales/Box';
 
 const SongDetail = (props) => {
     const selectedSong = props.selectedSong;
