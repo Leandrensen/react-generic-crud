@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { selectSong } from '../../actions';
-import Loading from '../Globales/Loading';
+import { CircularProgress } from '@material-ui/core';
 
 const SongDetail = (props) => {
     const selectedSong = props.selectedSong;
@@ -34,8 +34,7 @@ const SongDetail = (props) => {
     const renderLoading = () => {
         return (
             <div style={{ padding: '30px 0' }}>
-                <Loading width='250px' />
-                <Loading height='280px' />
+                <CircularProgress />
             </div>
         );
     };

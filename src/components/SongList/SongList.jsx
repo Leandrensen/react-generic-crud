@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { List, ListItem, ListItemText, Divider } from '@material-ui/core/';
 import { selectSong } from '../../actions';
-import Loading from '../Globales/Loading';
-import Button from '../Globales/Button';
+import { Button, CircularProgress } from '@material-ui/core';
 
 const SongList = (props) => {
     useEffect(() => {
@@ -39,8 +38,7 @@ const SongList = (props) => {
     const renderLoading = () => {
         return (
             <div style={{ padding: '30px 0' }}>
-                <Loading width='250px' />
-                <Loading height='280px' />
+                <CircularProgress />
             </div>
         );
     };
