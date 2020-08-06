@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import Box from '@material-ui/core/Box';
-import { Grid, TextField, FormControl } from '@material-ui/core';
-
-const handleSubmit = () => {
-    return;
-};
-
-const clearErrors = () => {
-    return;
-};
+import { Box, Grid, TextField, FormControl } from '@material-ui/core';
 
 const Login = (props) => {
+    const [username, setUserame] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = () => {
+        return;
+    };
+
+    const clearErrors = () => {
+        return;
+    };
+
     return (
         <Box>
             <FormControl
@@ -27,18 +29,24 @@ const Login = (props) => {
                     alignItems='center'
                     justify='center'
                     style={{ minHeight: '100vh' }}>
-                    <Grid item xs={12}>
+                    <Grid item>
                         <TextField
                             type='text'
                             label='Username'
                             variant='outlined'
-                            required={true}
                             error={false}
+                            onChange={(e) => setUsername(e.target.value)}
                             autoFocus={true}
                         />
                     </Grid>
-                    <Grid item xs={12}>
-                        <TextField type='password' label='Password' variant='outlined' required={true} error={false} />
+                    <Grid item>
+                        <TextField
+                            type='password'
+                            label='Password'
+                            variant='outlined'
+                            error={false}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
                     </Grid>
                 </Grid>
             </FormControl>
