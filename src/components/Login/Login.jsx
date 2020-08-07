@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Grid, TextField, FormControl } from '@material-ui/core';
 
 const Login = (props) => {
-    const [username, setUserame] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = () => {

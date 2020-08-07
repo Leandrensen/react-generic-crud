@@ -2,13 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import App from './components/App';
+import { ConnectedRouter } from 'connected-react-router';
+
 import reducers from './reducers';
-import './styles/main.scss';
+import Routes from './routes';
+import store from './store';
+import history from './history';
 
 ReactDOM.render(
-    <Provider store={createStore(reducers)}>
-        <App />
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <Routes />
+        </ConnectedRouter>
     </Provider>,
     document.querySelector('#app')
 );
