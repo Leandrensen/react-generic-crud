@@ -2,15 +2,17 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // App Components
-import App from './components/App';
+
 // import AppRoles from './components/AppRoles';
 
 // Common Routes
 import Login from './containers/Login';
 import Page404 from './containers/Page404';
 
+///////
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
+
 const PageOne = () => {
     return (
         <div>
@@ -32,16 +34,15 @@ const PageTwo = () => {
         </div>
     );
 };
+///////
 
 const Routes = () => (
-    <App>
-        <Switch>
-            <Route path='/login' component={Login} exact />
-            <Route path='/' component={PageOne} exact />
-            <Route path='/pagetwo' component={PageTwo} exact />
-            <Route component={Page404} />
-        </Switch>
-    </App>
+    <Switch>
+        <Route path='/login' component={Login} exact />
+        <Route path='/' component={PageOne} exact />
+        <Route path='/pagetwo' component={PageTwo} exact />
+        <Route component={Page404} />
+    </Switch>
 );
 
 export default Routes;
