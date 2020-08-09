@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Grid, TextField, FormControl } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 const Login = (props) => {
     const [username, setUsername] = useState('');
@@ -13,22 +14,24 @@ const Login = (props) => {
         return;
     };
 
+    // CSS ///////////////////////////
+    const useStyles = makeStyles((theme) => ({
+        login: {
+            minHeight: '94vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+    }));
+
+    const classes = useStyles();
+    /////////////////////////////////
+
     return (
-        <Box>
-            <FormControl
-                className='login'
-                noValidate
-                autoComplete='off'
-                onSubmit={handleSubmit}
-                onChange={clearErrors}
-                style={{ width: '100%' }}>
-                <Grid
-                    container
-                    spacing={1}
-                    direction='column'
-                    alignItems='center'
-                    justify='center'
-                    style={{ minHeight: '100vh' }}>
+        <Box className={classes.login}>
+            <FormControl className='login' noValidate autoComplete='off' onSubmit={handleSubmit} onChange={clearErrors}>
+                <Grid container spacing={1} direction='column' alignItems='center' justify='center'>
                     <Grid item>
                         <TextField
                             type='text'
