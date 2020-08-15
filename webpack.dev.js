@@ -36,7 +36,7 @@ module.exports = merge(common, {
         contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'src')],
         historyApiFallback: true,
         hot: true,
-        host: '0.0.0.0',
+        host: 'localhost',
         port: 9069,
         watchContentBase: true,
         allowedHosts: ['reactcrud.pm'],

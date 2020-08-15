@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // Common Routes
-import Header from './components/Globales/Header';
+import Header from './components/Header';
 import Login from './containers/Login';
 import Page404 from './containers/Page404';
 import StreamList from './components/Streams/StreamList';
