@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Box, Grid, TextField, FormControl } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import GoogleAuth from '../GoogleAuth';
+import GoogleAuth from '../../containers/GoogleAuth';
 
 const Login = (props) => {
     const [username, setUsername] = useState('');
