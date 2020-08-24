@@ -4,17 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import GoogleAuth from '../../containers/GoogleAuth';
 
 const Login = (props) => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleSubmit = () => {
-        return;
-    };
-
-    const clearErrors = () => {
-        return;
-    };
-
     // CSS ///////////////////////////
     const useStyles = makeStyles((theme) => ({
         login: {
@@ -28,6 +17,17 @@ const Login = (props) => {
 
     const classes = useStyles();
     /////////////////////////////////
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = () => {
+        return;
+    };
+
+    const clearErrors = () => {
+        return;
+    };
 
     return (
         <Box className={classes.login}>

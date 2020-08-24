@@ -3,6 +3,7 @@ import { connectRouter } from 'connected-react-router';
 import history from '../history';
 
 // Reducers
+import { reducer as reduxFormReducer } from 'redux-form';
 import songsReducer from './songsReducer';
 import selectedSongReducer from './selectedSongReducer';
 import googleAuthReducer from './googleAuthReducer';
@@ -11,6 +12,7 @@ import googleAuthReducer from './googleAuthReducer';
 //Basicamente este combineReducers es el que arma el "state" con las keys, y los resultados de lo que devuelven los reducers que le pasas a las keys
 const appReducer = combineReducers({
     router: connectRouter(history),
+    form: reduxFormReducer,
     songs: songsReducer,
     selectedSong: selectedSongReducer,
     googleAuth: googleAuthReducer,
