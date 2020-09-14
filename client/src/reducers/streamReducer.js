@@ -5,7 +5,6 @@ import {
     EDIT_STREAM,
     DELETE_STREAM,
 } from '../actions/types';
-
 import _ from 'lodash';
 
 export default (state = {}, action) => {
