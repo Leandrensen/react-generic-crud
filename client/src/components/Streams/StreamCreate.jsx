@@ -9,13 +9,8 @@ const StreamCreate = (props) => {
     // CSS ///////////////////////////
     const useStyles = makeStyles((theme) => ({
         root: {
-            display: 'flex',
             margin: theme.spacing(3),
         },
-        form: {
-            width: '95%',
-        },
-        formControl: {},
         textField: {
             width: '100%',
             '&:first-of-type': {
@@ -48,8 +43,8 @@ const StreamCreate = (props) => {
 
     return (
         <Box className={classes.root}>
-            <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-                <FormControl className={classes.formControl} fullWidth={true}>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <FormControl fullWidth={true}>
                     <TextField
                         className={classes.textField}
                         inputRef={register}

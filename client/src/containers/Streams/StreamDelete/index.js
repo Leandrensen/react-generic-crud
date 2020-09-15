@@ -1,7 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import StreamDelete from '../../../components/Streams/StreamDelete';
+import { fetchStream } from '../../../actions';
 
 const StreamDeleteContainer = (props) => <StreamDelete {...props} />;
 
-export default connect(null, null)(StreamDeleteContainer);
+const mapStateToProps = (state, ownProps) => {
+    return {
+        stream: state.streams[ownProps.match.params.id],
+    };
+}
+
+export default connect(mapStateToProps, { fetchStream })(StreamDeleteContainer);

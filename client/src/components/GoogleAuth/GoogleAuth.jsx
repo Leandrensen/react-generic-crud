@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Box } from '@material-ui/core';
 
 const GoogleAuth = (props) => {

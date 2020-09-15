@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
     return {
         streams: Object.values(state.streams),
         currentUserId: state.googleAuth.userId,
+        isSignedIn: state.googleAuth.isSignedIn,
     };
 };
 

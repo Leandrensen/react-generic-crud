@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
     Box,
@@ -55,7 +55,7 @@ const StreamList = (props) => {
     const classes = useStyles();
     /////////////////////////////////
 
-    const { streams, currentUserId, fetchStreams } = props;
+    const { streams, currentUserId, isSignedIn, fetchStreams } = props;
 
     useEffect(() => {
         fetchStreams();
@@ -71,7 +71,7 @@ const StreamList = (props) => {
                         </IconButton>
                     </Tooltip>
                     <Tooltip arrow classes={classes.tooltip} title='Edit'>
-                        <IconButton edge="end" aria-label="edit">
+                        <IconButton component={Link} to={`/streams/edit/${stream.id}`} edge="end" aria-label="edit">
                             <EditIcon />
                         </IconButton>
                     </Tooltip>
@@ -99,6 +99,18 @@ const StreamList = (props) => {
         });
     };
 
+    const renderCreateStream = () => {
+        if(isSignedIn) {
+            return (
+                <Box className={classes.buttonContainer}>
+                    <Button component={Link} to={'/streams/new'} variant='contained' color='primary'>
+                        Create Stream
+                    </Button>
+                </Box>
+            );
+        }
+    };
+
     return (
         <Box className={classes.streams}>
             <Typography variant={'h3'}>
@@ -107,11 +119,7 @@ const StreamList = (props) => {
             <Box className={classes.streamsList}>
                 {streams && renderList()}
             </Box>
-            <Box className={classes.buttonContainer}>
-                <Button component={Link} to={'/streams/new'} variant='contained' color='primary'>
-                    Create Stream
-                </Button>
-            </Box>
+            {renderCreateStream()}
         </Box>
     );
 };
