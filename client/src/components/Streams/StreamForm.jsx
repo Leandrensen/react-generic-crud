@@ -72,14 +72,12 @@ const StreamForm = (props) => {
 export default StreamForm;
 
 StreamForm.defaultProps = {
-    streamId: null,
     title: '',
     description: '',
 };
 
 StreamForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    streamId: PropTypes.number,
     title: PropTypes.string,
     description: PropTypes.string,
 };
