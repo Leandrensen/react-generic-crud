@@ -65,14 +65,14 @@ const StreamList = (props) => {
         if(stream.userId === currentUserId) {
             return (
                 <ListItemSecondaryAction>
-                    <Tooltip arrow classes={classes.tooltip} title='Delete'>
-                        <IconButton edge="end" aria-label="delete">
-                            <DeleteIcon />
-                        </IconButton>
-                    </Tooltip>
                     <Tooltip arrow classes={classes.tooltip} title='Edit'>
                         <IconButton component={Link} to={`/streams/edit/${stream.id}`} edge="end" aria-label="edit">
                             <EditIcon />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip arrow classes={classes.tooltip} title='Delete'>
+                        <IconButton edge="end" aria-label="delete">
+                            <DeleteIcon />
                         </IconButton>
                     </Tooltip>
                 </ListItemSecondaryAction>

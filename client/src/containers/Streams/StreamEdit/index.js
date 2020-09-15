@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import StreamEdit from '../../../components/Streams/StreamEdit';
-import { fetchStream } from '../../../actions';
+import { fetchStream, editStream } from '../../../actions';
 
 const StreamEditContainer = (props) => <StreamEdit {...props} />;
 
@@ -11,4 +11,4 @@ const mapStateToProps = (state, ownProps) => {
     };
 }
 
-export default connect(mapStateToProps, { fetchStream })(StreamEditContainer);
+export default connect(mapStateToProps, { fetchStream, editStream })(StreamEditContainer);
