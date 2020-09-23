@@ -18,7 +18,7 @@ export default (state = {}, action) => {
         case EDIT_STREAM:
             return { ...state, [payload.id]: payload };
         case DELETE_STREAM:
-            _.omit(state, payload); // here we are using lodash library function called 'omit'
+            return _.omit(state, payload); // here we are using lodash library function called 'omit'
         case FETCH_STREAMS:
             return { ...state, ..._.mapKeys(payload, 'id') }; // here we are using lodash library function called 'mapKeys'
         default:

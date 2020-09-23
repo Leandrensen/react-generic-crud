@@ -28,7 +28,6 @@ const StreamList = (props) => {
         streamsList: {
           padding: '10px 0',
         },
-        stream: {},
         listItem: {
             padding: '5px',
         },
@@ -39,16 +38,6 @@ const StreamList = (props) => {
         buttonContainer: {
             display: 'flex',
             justifyContent: 'flex-end',
-        },
-        tooltip: {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            minHeight: '56px',
-            minWidth: '85px',
-            fontSize: '13px',
-            backgroundColor: 'rgba(57, 57, 57, 0.9)',
-            boxShadow: '0 3px 6px 0 rgba(0, 0, 0, .16)',
         },
     }));
 
@@ -65,13 +54,13 @@ const StreamList = (props) => {
         if(stream.userId === currentUserId) {
             return (
                 <ListItemSecondaryAction>
-                    <Tooltip arrow classes={classes.tooltip} title='Edit'>
+                    <Tooltip arrowtitle='Edit'>
                         <IconButton component={Link} to={`/streams/edit/${stream.id}`} edge="end" aria-label="edit">
                             <EditIcon />
                         </IconButton>
                     </Tooltip>
-                    <Tooltip arrow classes={classes.tooltip} title='Delete'>
-                        <IconButton edge="end" aria-label="delete">
+                    <Tooltip arrow title='Delete'>
+                        <IconButton component={Link} to={`/streams/delete/${stream.id}`} edge="end" aria-label="delete">
                             <DeleteIcon />
                         </IconButton>
                     </Tooltip>

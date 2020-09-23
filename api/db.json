@@ -26,12 +26,6 @@
       "id": 5
     },
     {
-      "title": "test userId",
-      "description": "test userId",
-      "userId": null,
-      "id": 6
-    },
-    {
       "title": "test userId 2",
       "description": "test userId 2 ",
       "userId": "114682198150152482034",
@@ -53,12 +47,6 @@
       "title": "Refactor Test asdasdsa",
       "description": "Refactor Test asdasdsad",
       "id": 10
-    },
-    {
-      "title": "Test patch Test patch edit",
-      "description": "Test patch Test patch edit",
-      "userId": "114682198150152482034",
-      "id": 11
     }
   ]
 }
