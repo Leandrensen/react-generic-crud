@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-// Common Routes
 import Header from './containers/Header';
 import Login from './containers/Login';
 import Page404 from './containers/Page404';

@@ -4,7 +4,6 @@ import {Button} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import history from '../../history';
 import { useParams } from "react-router-dom";
-import {fetchStream} from '../../actions';
 
 const StreamDelete = (props) => {
     const useStyles = makeStyles((theme) => ({

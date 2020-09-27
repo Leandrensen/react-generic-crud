@@ -54,7 +54,7 @@ const StreamList = (props) => {
         if(stream.userId === currentUserId) {
             return (
                 <ListItemSecondaryAction>
-                    <Tooltip arrowtitle='Edit'>
+                    <Tooltip arrow title='Edit'>
                         <IconButton component={Link} to={`/streams/edit/${stream.id}`} edge="end" aria-label="edit">
                             <EditIcon />
                         </IconButton>
@@ -74,7 +74,7 @@ const StreamList = (props) => {
             return (
                 <div className={classes.stream} key={stream.id}>
                     <List dense component="nav" aria-label="main streams">
-                        <ListItem button className={classes.listItem}>
+                        <ListItem button className={classes.listItem} component={Link} to={`/streams/show/${stream.id}`}>
                             <ListItemIcon className={classes.icon} >
                                 <PhotoCameraIcon />
                             </ListItemIcon>
